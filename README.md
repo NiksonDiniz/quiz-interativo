@@ -12,7 +12,7 @@ Projeto feito no Curso de JavaScript Roger Melo.
 
 #### 🎨Resultado
 
-![]()
+![](https://github.com/NiksonDiniz/quiz-interativo/blob/main/assets/quiz.gif)
 
 #### 🚀 Como executar os projetos
 
