@@ -1,6 +1,5 @@
-const form = document.querySelector('.quiz-form')
+const quizForm = document.querySelector('.quiz-form')
 const button = document.querySelector('button')
-
 const divScore = document.createElement('div')
 
 const correctAnswers = ['B', 'C', 'C', 'A']
@@ -13,15 +12,15 @@ const insertDivScore = insertDivScoreInfo => {
   previousSibling.insertAdjacentElement('beforebegin', divScore)
 }
 
-form.addEventListener('submit', event => {
+quizForm.addEventListener('submit', event => {
   event.preventDefault()
   
   let score = 0
   const userAnswers = [
-    form.inputQuestion1.value,
-    form.inputQuestion2.value,
-    form.inputQuestion3.value,
-    form.inputQuestion4.value,
+    quizForm.inputQuestion1.value,
+    quizForm.inputQuestion2.value,
+    quizForm.inputQuestion3.value,
+    quizForm.inputQuestion4.value,
   ]
 
   userAnswers.forEach( (userAnswer, index )=> {
