@@ -1,15 +1,13 @@
 const quizForm = document.querySelector('.quiz-form')
-const button = document.querySelector('button')
-const divScore = document.createElement('div')
+const buttonSubmitQuiz = document.querySelector('button')
+const scoreContainer = document.createElement('div')
 
 const correctAnswers = ['B', 'C', 'C', 'A']
 
-const insertDivScore = insertDivScoreInfo => {
-  const {text, className, previousSibling} = insertDivScoreInfo
-
-  divScore.textContent = text
-  divScore.setAttribute('class', className)
-  previousSibling.insertAdjacentElement('beforebegin', divScore)
+const showScore = ({score, className}) => {
+  scoreContainer.textContent = `Sua pontuação é ${score}`
+  scoreContainer.setAttribute('class', className)
+  buttonSubmitQuiz.insertAdjacentElement('beforebegin', scoreContainer)
 }
 
 quizForm.addEventListener('submit', event => {
@@ -23,34 +21,15 @@ quizForm.addEventListener('submit', event => {
     quizForm.inputQuestion4.value,
   ]
 
-  userAnswers.forEach( (userAnswer, index )=> {
-    
+  userAnswers.forEach( (userAnswer, index )=> {    
     if(userAnswer === correctAnswers[index]) {
       score += 25
     }
-
-    const badScore = {
-      text: `Sua pontuação é ${score}`,
-      className: 'alert alert-danger',
-      previousSibling: button
-    }
-
-    const goodScore = {
-      text: `Sua pontuação é ${score}`,
-      className: 'alert alert-success',
-      previousSibling: button
-    }
+  })
 
     if(score <= 45) {
-      insertDivScore(badScore)
-      // divScore.textContent = `Sua pontuação é ${score}`
-      // divScore.setAttribute('class', 'alert alert-danger')
-      // button.insertAdjacentElement('beforebegin', divScore)
+      showScore({score, className: 'alert alert-danger' })
       return
     } 
-    insertDivScore(goodScore)
-    // divScore.textContent = `Sua pontuação é ${score}`
-    // divScore.setAttribute('class', 'alert alert-success')
-    // button.insertAdjacentElement('beforebegin', divScore)
-  })
+    showScore({score, className: 'alert alert-success' })
 })
