@@ -12,7 +12,7 @@ Projeto feito no Curso de JavaScript Roger Melo.
 
 #### 🎨Resultado
 
-![](https://github.com/NiksonDiniz/quiz-interativo/blob/main/assets/quiz.gif)
+[Clique aqui para acessar o quiz](https://quiz-simpsons-nd.netlify.app/)
 
 #### 🚀 Como executar os projetos
 
