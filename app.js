@@ -19,7 +19,7 @@ quizForm.addEventListener('submit', event => {
     quizForm.inputQuestion2.value,
     quizForm.inputQuestion3.value,
     quizForm.inputQuestion4.value,
-    quizForm.inputQuestion5.value
+    quizForm.inputQuestion5.value,
   ]
 
   userAnswers.forEach( (userAnswer, index )=> {    
@@ -28,9 +28,9 @@ quizForm.addEventListener('submit', event => {
     }
   })
 
-    if(score <= 45) {
-      showScore({score, className: 'alert alert-danger' })
-      return
-    } 
-    showScore({score, className: 'alert alert-success' })
+  if(score <= 45) {
+    showScore({score, className: 'alert alert-danger' })
+    return
+  } 
+  showScore({score, className: 'alert alert-success' })
 })
