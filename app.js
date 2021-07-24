@@ -2,10 +2,10 @@ const quizForm = document.querySelector('.quiz-form')
 const buttonSubmitQuiz = document.querySelector('button')
 const scoreContainer = document.createElement('div')
 
-const correctAnswers = ['B', 'C', 'C', 'A']
+const correctAnswers = ['B', 'C', 'C', 'A', 'A', 'B']
 
 const showScore = ({score, className}) => {
-  scoreContainer.textContent = `Sua pontuação é ${score}`
+  scoreContainer.textContent = `Sua pontuação é ${score}%`
   scoreContainer.setAttribute('class', className)
   buttonSubmitQuiz.insertAdjacentElement('beforebegin', scoreContainer)
 }
@@ -19,11 +19,12 @@ quizForm.addEventListener('submit', event => {
     quizForm.inputQuestion2.value,
     quizForm.inputQuestion3.value,
     quizForm.inputQuestion4.value,
+    quizForm.inputQuestion5.value
   ]
 
   userAnswers.forEach( (userAnswer, index )=> {    
     if(userAnswer === correctAnswers[index]) {
-      score += 25
+      score += 20
     }
   })
 
